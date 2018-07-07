@@ -15,8 +15,6 @@ class ServoController:
     def testMinMax(self):
         print("Testing Servo Min/Max angle for GPIO-Pin "+ str(self.pin))
         self.servo = Servo(18)
-        self.servo.min()
-        self.servo.max()
 
 
     def rotateTo(self, angle):
