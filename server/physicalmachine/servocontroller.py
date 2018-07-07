@@ -20,4 +20,4 @@ class ServoController:
         #self.angularServo.angle = desiredPosition
         #self.angle = desiredPosition
         self.dc = 1./18.*(desiredPosition)+2
-        self.pwm.ChangeDutyCycle(desiredPosition)
+        self.pwm.ChangeDutyCycle(self.dc)
