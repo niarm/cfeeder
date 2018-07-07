@@ -16,7 +16,7 @@ class ServoController:
         self.pwm.start(7)
 
     def rotateTo(self, desiredPosition):
-        print("Rotating Servo at GPIO-Pin "+ str(self.pin) +" to angle: "+ str(angle))
+        print("Rotating Servo at GPIO-Pin "+ str(self.pin) +" to angle: "+ str(desiredPosition))
         #self.angularServo.angle = desiredPosition
         #self.angle = desiredPosition
         self.dc = 1./18.*(desiredPosition)+2
