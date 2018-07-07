@@ -14,7 +14,7 @@ class CatfeederMainApplication():
         self.checkSensors()
 
     def checkSensors(self):
-        print("checking Sensors for new Input")
+        a = 1
 
 if __name__ == "__main__":
     app = CatfeederMainApplication()
