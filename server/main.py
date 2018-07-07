@@ -8,7 +8,7 @@ class CatfeederMainApplication():
 
     def setup(self):
         print("Starting Catfeeder Main Application");
-        self.servoLeft = ServoController(pin=17)
+        self.servoLeft = ServoController(pin=18)
 
     def run(self):
         self.checkSensors()
