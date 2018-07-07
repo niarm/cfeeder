@@ -16,10 +16,10 @@ class CatfeederMainApplication():
 
         sleep(5.0)
         print("Rotate Servo To -90")
-        self.servoLeft.rotateTo(-90)
+        self.servoLeft.rotateTo(0)
         sleep(5.0)
         print("Rotate Servo To 90")
-        self.servoLeft.rotateTo(90)
+        self.servoLeft.rotateTo(180)
 
     def checkSensors(self):
         a = 1
