@@ -6,24 +6,14 @@ class ServoController:
     def __init__(self, pin, angle = 0):
         self.pin = pin
         self.angle = angle
-        self.testMinMax()
-    
+        self.setup()
+
     def setup(self):
         print("Setup ServoController for GPIO-Pin "+ str(self.pin))
-        self.angularServo = AngularServo(pin=self.pin, initial_angle=self.angle)
-
-    def testMinMax(self):
-        print("Testing Servo Min/Max angle for GPIO-Pin "+ str(self.pin))
-        self.servo = Servo(18)
-        sleep(2.0)
-        self.servo.min()
-        sleep(2.0)
-        print(self.servo.value)
-        self.servo.max()
-        sleep(2.0)
-        print(self.servo.value)
+        self.angularServo = AngularServo(pin=self.pin, initial_angle=self.angle, min_angle=-180, max_angle=180)
 
 
     def rotateTo(self, angle):
         print("Rotating Servo at GPIO-Pin "+ self.pin +" to angle: "+ angle)
+        self.angularServo.angle = angle
         self.angle = angle
