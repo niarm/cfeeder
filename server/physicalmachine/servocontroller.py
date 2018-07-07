@@ -19,5 +19,5 @@ class ServoController:
         #self.angularServo.angle = desiredPosition
         #self.angle = desiredPosition
         self.dc = 1./18.*(desiredPosition)+2
-        print("Rotating Servo at GPIO-Pin "+ str(self.pin) +"to pos: "+ desiredPosition +" with dc: "+ str(self.dc))
+        print("Rotating Servo at GPIO-Pin "+ str(self.pin) +"to pos: "+ str(desiredPosition) +" with dc: "+ str(self.dc))
         self.pwm.ChangeDutyCycle(self.dc)
