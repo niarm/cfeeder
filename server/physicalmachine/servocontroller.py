@@ -1,4 +1,4 @@
-from gpiozero import Servo
+from gpiozero import AngularServo
 from time import sleep
 
 class ServoController:
@@ -9,14 +9,10 @@ class ServoController:
 
     def setup(self):
         print("Setup ServoController for GPIO-Pin "+ str(self.pin))
-        self.angularServo = Servo(self.pin)
+        self.angularServo = AngularServo(pin=self.pin)
 
 
     def rotateTo(self, angle):
         print("Rotating Servo at GPIO-Pin "+ str(self.pin) +" to angle: "+ str(angle))
-        #self.angularServo.angle = angle
-        #self.angle = angle
-        self.angularServo.max()
-        sleep(2.0)
-        self.angularServo.min()
-        sleep(2.0)
+        self.angularServo.angle = angle
+        self.angle = angle

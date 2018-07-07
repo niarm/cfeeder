@@ -10,15 +10,16 @@ class CatfeederMainApplication():
     def setup(self):
         print("Starting Catfeeder Main Application");
         self.servoLeft = ServoController(pin=18)
-        sleep(5.0)
-        print("Rotate Servo To -170")
-        self.servoLeft.rotateTo(-170)
-        sleep(5.0)
-        print("Rotate Servo To 170")
-        self.servoLeft.rotateTo(170)
 
     def run(self):
-        self.checkSensors()
+        #self.checkSensors()
+
+        sleep(5.0)
+        print("Rotate Servo To -89")
+        self.servoLeft.rotateTo(-89)
+        sleep(5.0)
+        print("Rotate Servo To 89")
+        self.servoLeft.rotateTo(89)
 
     def checkSensors(self):
         a = 1
