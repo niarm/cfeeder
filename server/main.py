@@ -15,7 +15,7 @@ class CatfeederMainApplication():
         #self.checkSensors()
 
         sleep(5.0)
-        self.servoLeft.rotateTo(0)
+        self.servoLeft.rotateTo(-180)
         sleep(5.0)
         self.servoLeft.rotateTo(180)
 
