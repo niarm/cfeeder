@@ -21,8 +21,8 @@ class CatfeederMainApplication():
     def run(self):
         #self.checkSensors()
         #self.checkSensors()
-        sleep(5.0)
-        self.stepperLeft.rotateSteps(100,1)
+        sleep(8.0)
+        self.stepperLeft.rotateSteps(200,1)
 
 
     def checkSensors(self):
