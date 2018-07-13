@@ -13,4 +13,4 @@ class StepperController:
         print("Setup StepperController for EN: "+ str(self.pin_enable)+"/ STEP: "+ str(self.pin_step)+"/ DIR: "+ str(self.pin_dir))
 
     def rotateSteps(self, num_steps):
-        print("Rotating Stepper"+ str(self.id) +"to pos: "+ str(num_steps))
+        print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps))
