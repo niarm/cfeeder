@@ -8,7 +8,7 @@ class StepperController:
         self.pin_step = pin_step
         self.pin_dir = pin_dir
         self.steps_per_revolution = steps_per_revolution
-        self.delay = .0005
+        self.delay = .0416
         
         self.setup()
 
