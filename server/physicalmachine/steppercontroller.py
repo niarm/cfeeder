@@ -31,3 +31,4 @@ class StepperController:
             sleep(self.delay)
             GPIO.output(self.pin_step, GPIO.LOW)
             sleep(self.delay)
+            print("step done: "+str(x))

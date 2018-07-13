@@ -10,6 +10,7 @@ class CatfeederMainApplication():
                 self.run()
         except:
             GPIO.cleanup()
+            print("cleanup GPIO done")
 
     def setup(self):
         print("Starting Catfeeder Main Application");
@@ -19,7 +20,7 @@ class CatfeederMainApplication():
         #self.checkSensors()
         #self.checkSensors()
         sleep(5.0)
-        #self.stepperLeft.rotateSteps(10)
+        self.stepperLeft.rotateSteps(10,1)
 
 
     def checkSensors(self):
