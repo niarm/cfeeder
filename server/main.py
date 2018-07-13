@@ -21,8 +21,9 @@ class CatfeederMainApplication():
     def run(self):
         #self.checkSensors()
         #self.checkSensors()
-        sleep(8.0)
-        self.stepperLeft.rotateSteps(200,1)
+        steps = float(input("Steps?"))
+        delay = float(input("Delay?"))
+        self.stepperLeft.rotateSteps(steps,1,delay)
 
 
     def checkSensors(self):

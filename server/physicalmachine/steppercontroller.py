@@ -8,8 +8,7 @@ class StepperController:
         self.pin_step = pin_step
         self.pin_dir = pin_dir
         self.steps_per_revolution = steps_per_revolution
-        self.delay = .05
-        
+                
         self.setup()
 
     def setup(self):
@@ -22,17 +21,17 @@ class StepperController:
         GPIO.output(self.pin_enable, GPIO.LOW) #high is stop
         print("... setup done")
 
-    def rotateSteps(self, num_steps, direction=1):
+    def rotateSteps(self, num_steps, direction=1, delay=.05):
         print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps) + " in directon: "+str(direction)+"(CW=1, CCW=0)")
         GPIO.output(self.pin_enable, GPIO.LOW)
         GPIO.output(self.pin_dir, direction)
-        sleep(self.delay)
+        sleep(delay)
 
         for x in range(num_steps):
             GPIO.output(self.pin_step, GPIO.HIGH)
-            sleep(self.delay)
+            sleep(delay)
             GPIO.output(self.pin_step, GPIO.LOW)
-            sleep(self.delay)
+            sleep(delay)
             #print("step done: "+str(x))
         
         GPIO.output(self.pin_enable, GPIO.HIGH)
