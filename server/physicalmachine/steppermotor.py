@@ -58,8 +58,6 @@ class stepper:
 		waitTime = 0.000001/speed #waitTime controls speed
 
 		while stepCounter < steps:
-			#gracefully exit if ctr-c is pressed
-			#exitHandler.exitPoint(True) #exitHandler.exitPoint(True, cleanGPIO)
 
 			#turning the gpio on and off tells the easy driver to take one step
 			gpio.output(self.stepPin, True)

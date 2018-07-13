@@ -15,6 +15,6 @@ class StepperController:
         self.stepperMotor = stepper([self.pin_step, self.pin_dir, self.pin_enable])
         print("... setup done")
 
-    def rotateSteps(self, num_steps, direction=1):
+    def rotateSteps(self, num_steps, direction="right"):
         print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps) + " in directon: "+str(direction)+"(CW=1, CCW=0)")
-        self.stepperMotor.step(num_steps, "right")
+        self.stepperMotor.step(num_steps, direction)
