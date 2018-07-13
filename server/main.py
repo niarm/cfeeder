@@ -9,8 +9,8 @@ class CatfeederMainApplication():
             while True:
                 self.run()
         except Exception as e:
-            print e.__doc__
-            print e.message
+            print(e.__doc__)
+            print(e.message)
             
             GPIO.cleanup()
             print("cleanup GPIO done")
