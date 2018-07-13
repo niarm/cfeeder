@@ -10,8 +10,8 @@ class CatfeederMainApplication():
                 self.run()
         except KeyboardInterrupt:
             #print('An exception occurred: {}'.format(error))
-            GPIO.cleanup()
-            print("cleanup GPIO done")
+            #GPIO.cleanup()
+            print("cleanup GPIO not done")
 
     def setup(self):
         print("Starting Catfeeder Main Application");
