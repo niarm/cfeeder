@@ -13,13 +13,14 @@ class StepperController:
         self.setup()
 
     def setup(self):
-        print("Setup StepperController with GPIO-CONFIG: (EN = "+ str(self.pin_enable)+", STEP = "+ str(self.pin_step)+", DIR = "+ str(self.pin_dir) + ")")
+        print("setting up StepperController with GPIO-CONFIG: (EN = "+ str(self.pin_enable)+", STEP = "+ str(self.pin_step)+", DIR = "+ str(self.pin_dir) + ")")
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.pin_enable, GPIO.OUT)
         GPIO.setup(self.pin_step, GPIO.OUT)
         GPIO.setup(self.pin_dir, GPIO.OUT)
 
         GPIO.output(self.pin_enable, GPIO.LOW)
+        print("... setup done")
 
     def rotateSteps(self, num_steps, direction=1):
         print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps) + " in directon: "+direction+"(CW=1, CCW=0)")
