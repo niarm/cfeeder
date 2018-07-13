@@ -8,8 +8,8 @@ class CatfeederMainApplication():
         try:
             while True:
                 self.run()
-        except Exception, error:
-            print(str(error))
+        except BaseException as error:
+            print('An exception occurred: {}'.format(error))
             
             GPIO.cleanup()
             print("cleanup GPIO done")
