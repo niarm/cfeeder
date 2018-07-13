@@ -1,23 +1,25 @@
-from physicalmachine.servocontroller import ServoController
+import RPi.GPIO as GPIO 
+from physicalmachine.steppercontroller import StepperController
 from time import sleep
 
 class CatfeederMainApplication():
     def __init__(self):
         self.setup()
-        while True:
-            self.run()
+        try:
+            while True:
+                self.run()
+        except:
+            GPIO.cleanup()
 
     def setup(self):
         print("Starting Catfeeder Main Application");
-        self.servoLeft = ServoController(pin=18)
+        self.stepperLeft = StepperController(stepper_id=1, pin_enable=22, pin_step=27, pin_dir=17 )
 
     def run(self):
         #self.checkSensors()
-
+        self.checkSensors()
         sleep(5.0)
-        self.servoLeft.rotateTo(0)
-        sleep(5.0)
-        self.servoLeft.rotateTo(180)
+        self.stepperLeft.rotateSteps(10)
 
     def checkSensors(self):
         a = 1
