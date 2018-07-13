@@ -10,7 +10,7 @@ class StepperController:
         self.setup()
 
     def setup(self):
-        print("Setup StepperController with GPIO-CONFIG: (EN = "+ str(self.pin_enable)+", STEP = "+ str(self.pin_step)+", DIR = "+ str(self.pin_dir))
+        print("Setup StepperController with GPIO-CONFIG: (EN = "+ str(self.pin_enable)+", STEP = "+ str(self.pin_step)+", DIR = "+ str(self.pin_dir) + ")")
 
     def rotateSteps(self, num_steps):
         print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps))
