@@ -8,7 +8,7 @@ class StepperController:
         self.pin_step = pin_step
         self.pin_dir = pin_dir
         self.steps_per_revolution = steps_per_revolution
-        self.delay = 0.1664
+        self.delay = .001
         
         self.setup()
 
@@ -35,5 +35,5 @@ class StepperController:
             sleep(self.delay)
             print("step done: "+str(x))
         
-        sleep(self.delay)
+        sleep(self.dela)
         GPIO.output(self.pin_enable, GPIO.HIGH)
