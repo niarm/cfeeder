@@ -1,5 +1,5 @@
 from time import sleep
-from .Stepper import stepper
+from physicalmachine.steppermotor import stepper
 
 class StepperController:
     def __init__(self, stepper_id, pin_enable, pin_step, pin_dir, steps_per_revolution=200):
