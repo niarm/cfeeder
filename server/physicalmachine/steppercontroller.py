@@ -24,6 +24,7 @@ class StepperController:
 
     def rotateSteps(self, num_steps, direction=1):
         print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps) + " in directon: "+str(direction)+"(CW=1, CCW=0)")
+        GPIO.output(self.pin_enable, GPIO.HIGH)
         GPIO.output(self.pin_dir, direction)
         
         for x in range(num_steps):
@@ -32,3 +33,5 @@ class StepperController:
             GPIO.output(self.pin_step, GPIO.LOW)
             sleep(self.delay)
             print("step done: "+str(x))
+        
+        GPIO.output(self.pin_enable, GPIO.LOW)
