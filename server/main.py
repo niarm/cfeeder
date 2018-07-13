@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO 
-from physicalmachine.steppercontroller import StepperController
+#from physicalmachine.steppercontroller import StepperController
+from physicalmachine.servocontroller import ServoController
 from time import sleep
 
 class CatfeederMainApplication():
@@ -16,14 +17,15 @@ class CatfeederMainApplication():
     def setup(self):
         print("Starting Catfeeder Main Application");
         GPIO.setwarnings(False)
-        self.stepperLeft = StepperController(stepper_id=1, pin_enable=22, pin_step=27, pin_dir=17 )
+        #self.stepperLeft = StepperController(stepper_id=1, pin_enable=22, pin_step=27, pin_dir=17 )
+        self.servo = ServoController(17)
 
     def run(self):
         #self.checkSensors()
-        #self.checkSensors()
-        steps = int(input("Steps?"))
-        delay = float(input("Delay?"))
-        self.stepperLeft.rotateSteps(steps,1,delay)
+        #steps = int(input("Steps?"))
+        angle = float(input("Angle?"))
+        self.servo.rotateTo(angle)
+        #self.stepperLeft.rotateSteps(steps,1,delay)
 
 
     def checkSensors(self):
