@@ -26,7 +26,8 @@ class StepperController:
         print("Moving Stepper"+ str(self.id) +" for num_steps: "+ str(num_steps) + " in directon: "+str(direction)+"(CW=1, CCW=0)")
         GPIO.output(self.pin_enable, GPIO.LOW)
         GPIO.output(self.pin_dir, direction)
-        
+        sleep(self.delay)
+
         for x in range(num_steps):
             GPIO.output(self.pin_step, GPIO.HIGH)
             sleep(self.delay)
@@ -34,4 +35,5 @@ class StepperController:
             sleep(self.delay)
             print("step done: "+str(x))
         
+        sleep(self.delay)
         GPIO.output(self.pin_enable, GPIO.HIGH)
