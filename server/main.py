@@ -16,6 +16,7 @@ class CatfeederMainApplication():
 
     def setup(self):
         print("Starting Catfeeder Main Application");
+        GPIO.setwarnings(False)
         self.stepperLeft = StepperController(stepper_id=1, pin_enable=22, pin_step=27, pin_dir=17 )
 
     def run(self):
